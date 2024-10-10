@@ -18,7 +18,7 @@ public class CategorizadorDeProductosController {
         this.chatClient = chatClientBuilder
                 .defaultOptions(ChatOptionsBuilder
                         .builder()
-                        .withModel("gpt-4o")
+                        .withModel("gpt-4o-mini")
                         .build())
                 .build();
     }
