@@ -40,11 +40,6 @@ public class CategorizadorDeProductosController {
                 Producto: Pelota de fútbol
                 Respuesta: Deportes
                 """;
-        var tokens = contadorDeTokens(system,producto);
-        System.out.println("Total de Tokens: " + tokens);
-
-        //implementación de la lógica para la selección del modelo
-
         return this.chatClient.prompt()
                 .system(system)
                 .user(producto)
@@ -53,12 +48,6 @@ public class CategorizadorDeProductosController {
                 .advisors(new SimpleLoggerAdvisor())
                 .call()
                 .content();
-    }
-
-    private int contadorDeTokens(String system, String user){
-        var registry = Encodings.newDefaultEncodingRegistry();
-        var enc = registry.getEncodingForModel(ModelType.GPT_4O_MINI);
-        return enc.countTokens(system + user);
     }
 
 }
