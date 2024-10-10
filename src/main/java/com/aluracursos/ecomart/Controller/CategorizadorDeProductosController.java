@@ -41,7 +41,7 @@ public class CategorizadorDeProductosController {
                 Respuesta: Deportes
                 """;
         var tokens = contadorDeTokens(system,producto);
-        System.out.println(tokens);
+        System.out.println("Total de Tokens: " + tokens);
 
         //implementación de la lógica para la selección del modelo
 
